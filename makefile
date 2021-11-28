@@ -1,19 +1,19 @@
 SRC=./src
 TARGET=./target
 GCC = g++
-CFLAGS = -o $(TARGET)/RecMult.out
+CFLAGS = -o $(TARGET)/Mult.out
 ARGS = 101
 RM = rm -rf
 
 all: clean default test
 
-default: RecMult.cpp
+default: Mult.cpp
 
-RecMult.cpp:
-    $(GCC) $(CFLAGS) $(SRC)/main/CoinFlipper.cpp
+Mult.cpp:
+	$(GCC) $(CFLAGS) $(SRC)/main/Mult.cpp $(SRC)/RecMult.cpp
 
-test: RecMult.cpp
-    $(TARGET)/RecMult.out $(ARGS)
+test: Mult.cpp
+	$(TARGET)/Mult.out $(ARGS) 
 
 clean:
-    $(RM) $(TARGET)/*.out
+	$(RM) $(TARGET)/*.out

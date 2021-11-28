@@ -1,24 +1,31 @@
-#include <cmath>
+#include "./RecMult.h"
 
-class RecMult
+/*RecMult::RecMult()
 {
-public:
-    long long int result;
+    x = 0;
+    y = 0;
+    nx = 0;
+    ny = 0;
+    res = 0;
 
-    long long int x,y,a,b,c,d,n, res;
-
-    RecMult(long long int x)
+}*/
+RecMult::RecMult(long long int x)
     {
         res = x;
         x = x;
-        n = NumberDigits(x);
-    }
+        nx = NumberDigits(x);
+    };
 
-    void Calc(long long int , long long int);
 
-    long long int NumberDigits(long long int);
-};
+ RecMult::RecMult(long long int x,long long int y)
+    {
+        res = 0;
+        x = x;
+        nx = NumberDigits(x);
+        y = y;
+        ny = NumberDigits(y);
 
+    };   
 
 void RecMult::Calc(long long int, long long int)
 {
