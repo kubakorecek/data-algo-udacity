@@ -1,19 +1,19 @@
 SRC=./src
 TARGET=./target
 GCC = g++
-CFLAGS = -o $(TARGET)/Mult.out
+CFLAGS =-Wall -pedantic -g -O2 -o $(TARGET)/main.out
 ARGS = 101
 RM = rm -rf
 
 all: clean default test
 
-default: Mult.cpp
+default: $(SRC)/main/main.cpp
 
-Mult.cpp:
-	$(GCC) $(CFLAGS) $(SRC)/main/Mult.cpp $(SRC)/RecMult.cpp
+main.cpp:
+	$(GCC) $(CFLAGS) $(SRC)/main/main.cpp $(SRC)/RecMult.cpp $(SRC)/Fibonacci.cpp
 
-test: Mult.cpp
-	$(TARGET)/Mult.out $(ARGS) 
+test: main.cpp
+	$(TARGET)/main.out $(ARGS) 
 
 clean:
 	$(RM) $(TARGET)/*.out

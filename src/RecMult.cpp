@@ -1,5 +1,5 @@
 #include "./RecMult.h"
-
+#include <cmath>
 /*RecMult::RecMult()
 {
     x = 0;
@@ -14,7 +14,7 @@ RecMult::RecMult(long long int x)
         res = x;
         x = x;
         nx = NumberDigits(x);
-    };
+    }
 
 
  RecMult::RecMult(long long int x,long long int y)
@@ -25,12 +25,12 @@ RecMult::RecMult(long long int x)
         y = y;
         ny = NumberDigits(y);
 
-    };   
+    } 
 
 void RecMult::Calc(long long int, long long int)
 {
     
-};
+}
 
 long long int RecMult::NumberDigits(long long int x)
 {
@@ -41,4 +41,4 @@ long long int RecMult::NumberDigits(long long int x)
         x = floor(x/10);
     }
     return x;
-};
+}
