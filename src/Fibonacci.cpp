@@ -25,11 +25,11 @@ void Fibonacci::calc()
 {
     switch(this->method)
     {
-        case "D":
+        case  DynamicAlgo :
             std::cout<<"calling dynamic method"<<std::endl;
             this->result = dynamicAlgo(this->n); 
             break;
-        case "R":
+        case Reccursive:
             std::cout<<"calling recursive method"<<std::endl;
             this->result = reccursiveAlgo(this->n); 
             break;
@@ -60,15 +60,15 @@ int Fibonacci::dynamicAlgo(int N)
 
 Fibonacci::Fibonacci()
 {
-    method = "R";
+    int method = Reccursive;
 }
 
-Fibonacci::Fibonacci(std::string method)
+Fibonacci::Fibonacci(int method)
 {
     method = method;
 }
 
-std::string Fibonacci::getM()
+int Fibonacci::getM()
 {
    return this->method; 
 

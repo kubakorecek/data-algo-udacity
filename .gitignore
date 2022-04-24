@@ -35,3 +35,6 @@
 .vscode/dryrun.log
 .vscode/settings.json
 .vscode/targets.log
+src/workspace.code-workspace
+/.vs
+/x64/Debug

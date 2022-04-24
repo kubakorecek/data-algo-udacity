@@ -1,8 +1,7 @@
 #ifndef FIBONACCI_H
 #define FIBONACCI_H
 #include <string>
-
-
+#include "../Methods.h"
 class Fibonacci
 {
     private:
@@ -13,11 +12,11 @@ class Fibonacci
         
 
     public:
-        string method;
-        Fibonacci(std::string method);
+        int method;
+        Fibonacci(int method);
         Fibonacci();
         int getResult();
-        std::string getM();
+        int getM();
         void setN(int n);
         void calc();
 
