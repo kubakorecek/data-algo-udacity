@@ -60,7 +60,7 @@ int Fibonacci::dynamicAlgo(int N)
 
 Fibonacci::Fibonacci()
 {
-    int method = Reccursive;
+    method = Reccursive;
 }
 
 Fibonacci::Fibonacci(int method)
