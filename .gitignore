@@ -38,3 +38,4 @@
 src/workspace.code-workspace
 /.vs
 /x64/Debug
+/tests/UnitTest1/x64/Debug

@@ -1,24 +1,26 @@
 #ifndef FIBONACCI_H
 #define FIBONACCI_H
 #include <string>
-#include "../Methods.h"
+#include "Methods.h"
 class Fibonacci
 {
-    private:
-        int result= {0};
-        int n = {0};
-        int reccursiveAlgo(int N);
-        int dynamicAlgo(int N);
-        
+private:
+	long int m_lResult = { 0 };
+	long int m_lN = { 0 };
+	long int m_lMethod;
+	int ReccursiveAlgorithm(int const N);
+	int DynamicAlgorithm(int const N);
 
-    public:
-        int method;
-        Fibonacci(int method);
-        Fibonacci();
-        int getResult();
-        int getM();
-        void setN(int n);
-        void calc();
+
+public:
+
+	Fibonacci(int const method);
+	Fibonacci(void);
+	int GetResult();
+	void Calc();
+	int getN();
+	void setN(int n);
+	int getMethod();
 
 };
 

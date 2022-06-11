@@ -1,75 +1,81 @@
 #include "./Fibonacci.h"
 #include <iostream>
 #include <string>
-int Fibonacci::getResult()
+
+int Fibonacci::GetResult()
 {
-   return this->result; 
+	return this->m_lResult;
 
 }
 
 void Fibonacci::setN(int n)
 {
-    this->n = n;
+	this->m_lN = n;
 }
 
-int Fibonacci::reccursiveAlgo(int N)
+int Fibonacci::ReccursiveAlgorithm(int const N)
 {
-    if(N<2 ){return N;}
-    else
-    {
-        return ( reccursiveAlgo(N-1) + reccursiveAlgo(N-2) );
-    }
+	if (N < 2) { return N; }
+	else
+	{
+		return (ReccursiveAlgorithm(N - 1) + ReccursiveAlgorithm(N - 2));
+	}
 }
 
-void Fibonacci::calc()
+void Fibonacci::Calc()
 {
-    switch(this->method)
-    {
-        case  DynamicAlgo :
-            std::cout<<"calling dynamic method"<<std::endl;
-            this->result = dynamicAlgo(this->n); 
-            break;
-        case Reccursive:
-            std::cout<<"calling recursive method"<<std::endl;
-            this->result = reccursiveAlgo(this->n); 
-            break;
-    }
-   
+	switch (this->m_lMethod)
+	{
+	case DynamicAlgo:
+		std::cout << "calling dynamic method" << std::endl;
+		this->m_lResult = DynamicAlgorithm(this->m_lN);
+		break;
+	case Reccursive:
+		std::cout << "calling recursive method" << std::endl;
+		this->m_lResult = ReccursiveAlgorithm(this->m_lN);
+		break;
+	}
+
 }
 
 
-int Fibonacci::dynamicAlgo(int N)
+int Fibonacci::DynamicAlgorithm(int const N)
 {
-    int F_i_m2 = 0;
-    int F_i_m1 = 1;
-    int tmpF_i_m1 = 1;
-    int F_i = 0;
-    if(N<2 ){return N;}
-    else
-    {for(int i = 2; i < N+1; i++)
-       {
-          F_i = F_i_m1 + F_i_m2;
-          tmpF_i_m1 = F_i_m1;
-          F_i_m1 = F_i_m2;
-          F_i_m2 = tmpF_i_m1;
-       }
-    }
+	auto F_i_m2 = 1;
+	auto F_i_m1 = 0;
+	auto F_i = 0;
+	if (N < 2) { return N; }
+	else
+	{
+		for (int i = 2; i < N + 1; i++)
+		{
+			F_i = F_i_m1 + F_i_m2;
+			F_i_m1 = F_i_m2;
+			F_i_m2 = F_i;
+		}
+	}
 
-    return F_i;
+	return F_i;
 }
 
-Fibonacci::Fibonacci()
+Fibonacci::Fibonacci(void)
 {
-    method = Reccursive;
+	m_lMethod = Reccursive;
 }
 
-Fibonacci::Fibonacci(int method)
+Fibonacci::Fibonacci(int const method)
 {
-    method = method;
+	m_lMethod = method;
 }
 
-int Fibonacci::getM()
+int Fibonacci::getN()
 {
-   return this->method; 
+	return this->m_lN;
+
+}
+
+int Fibonacci::getMethod()
+{
+	return this->m_lMethod;
 
 }
